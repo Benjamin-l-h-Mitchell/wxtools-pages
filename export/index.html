@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting...</title>
+  <script>
+    // Get the current URL path
+    const path = window.location.pathname;
+
+    // Match the path after "/export/"
+    const match = path.match(/^/export/(.+)$/);
+
+    if (match) {
+      // Create the destination URL using the matched part of the path
+      const destination = radarscope:///palette?url=${encodeURIComponent(match[1])};
+      // Redirect the user to the new URL
+      window.location.replace(destination);
+    } else {
+      // Fallback message if no match found
+      document.body.innerText = "Invalid URL.";
+    }
+  </script>
+</head>
+<body>
+  Redirecting...
+</body>
+</html>
