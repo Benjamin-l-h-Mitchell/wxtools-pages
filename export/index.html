@@ -10,7 +10,7 @@
 
     if (match) {
       // Construct the destination URL with the correct protocol (radarscope://)
-      const destination = radarscope:///palette?url=${encodeURIComponent(match[1])};
+      const destination = radarscope:/palette?url=${encodeURIComponent(match[1])};
 
       // Redirecting using window.location.replace()
       window.location.replace(destination);
